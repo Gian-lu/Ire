@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleziona una Data</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sei libera il...</h1>
+        <p>Seleziona una data:</p>
+        <input type="text" id="datePicker" placeholder="Seleziona una data">
+        <button onclick="submitDate()">Conferma</button>
+    </div>
+
+    <script>
+        flatpickr("#datePicker", {
+            altInput: true,
+            altFormat: "F j, Y",
+            dateFormat: "Y-m-d",
+        });
+
+        function submitDate() {
+            const date = document.getElementById('datePicker').value;
+            if (date) {
+                alert(`Grazie per stare con me questo giorno amore <3\nData selezionata: ${date}`);
+                // Puoi reindirizzare a una pagina di conferma se necessario.
+            } else {
+                alert('Per favore, seleziona una data.');
+            }
+        }
+    </script>
+</body>
+</html>
